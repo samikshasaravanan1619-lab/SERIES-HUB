@@ -1,0 +1,575 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SeriesHub | Discover. Explore. Enjoy.</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #080808;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+/* Navigation */
+header {
+    padding: 22px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #151515;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid #252525;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #00bfff;
+}
+
+nav {
+    display: flex;
+    gap: 28px;
+    align-items: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #00bfff;
+}
+
+/* Welcome Section */
+.hero {
+    min-height: 75vh;
+    display: flex;
+    align-items: center;
+    padding: 70px 8%;
+
+    background:
+    linear-gradient(to right,
+    rgba(0,0,0,0.95),
+    rgba(0,0,0,0.65),
+    rgba(0,0,0,0.3)),
+    url("images/home-bg.jpg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.tag {
+    color: #00bfff;
+    letter-spacing: 4px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.hero h1 {
+    font-size: 60px;
+    margin: 20px 0;
+}
+
+.hero h1 span {
+    color: #00bfff;
+}
+
+.hero p {
+    color: #ccc;
+    font-size: 17px;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.hero-btn {
+    display: inline-block;
+    background: #008fc7;
+    color: white;
+    text-decoration: none;
+    padding: 14px 28px;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.hero-btn:hover {
+    background: #00bfff;
+    color: black;
+    transform: scale(1.05);
+}
+
+/* Series Section */
+.series-section {
+    padding: 65px 6%;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.section-heading h2 {
+    font-size: 32px;
+}
+
+.section-heading h2 span {
+    color: #00bfff;
+}
+
+.section-heading p {
+    color: #999;
+    font-size: 14px;
+}
+
+/* Horizontal Series Cards */
+.series-container {
+    display: flex;
+    gap: 22px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 10px 5px 25px;
+}
+
+.series-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.series-container::-webkit-scrollbar-track {
+    background: #222;
+    border-radius: 10px;
+}
+
+.series-container::-webkit-scrollbar-thumb {
+    background: #008fc7;
+    border-radius: 10px;
+}
+
+.card {
+    min-width: 230px;
+    max-width: 230px;
+    background: #151515;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #292929;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    border-color: #00bfff;
+    box-shadow: 0 8px 25px rgba(0,191,255,0.15);
+}
+
+.card img {
+    width: 100%;
+    height: 290px;
+    object-fit: cover;
+    display: block;
+    transition: 0.4s;
+}
+
+.card:hover img {
+    transform: scale(1.04);
+}
+
+.card-content {
+    padding: 18px;
+}
+
+.card-content h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    min-height: 42px;
+}
+
+.card-content a {
+    display: block;
+    text-align: center;
+    background: #007da9;
+    color: white;
+    padding: 11px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.card-content a:hover {
+    background: #00bfff;
+    color: black;
+}
+
+/* Trailer Banner */
+.trailer-banner {
+    margin: 10px 6% 65px;
+    padding: 40px;
+    background: linear-gradient(120deg, #102b3d, #17132c);
+    border: 1px solid #164b68;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.trailer-banner h2 {
+    font-size: 28px;
+    margin-bottom: 12px;
+}
+
+.trailer-banner p {
+    color: #bbb;
+    margin-bottom: 22px;
+    line-height: 1.7;
+}
+
+.trailer-banner a {
+    display: inline-block;
+    background: #00a6df;
+    color: white;
+    padding: 13px 25px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.trailer-banner a:hover {
+    background: #00bfff;
+    color: black;
+}
+
+/* Contact Section */
+.contact {
+    background: #141414;
+    padding: 50px 7%;
+    text-align: center;
+}
+
+.contact h2 {
+    color: #00bfff;
+    font-size: 28px;
+    margin-bottom: 18px;
+}
+
+.contact p {
+    color: #aaa;
+    line-height: 1.8;
+}
+
+/* Footer */
+footer {
+    background: #080808;
+    padding: 22px;
+    text-align: center;
+    color: #777;
+    border-top: 1px solid #222;
+}
+
+/* Responsive Design */
+@media(max-width: 700px) {
+
+    header {
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    nav {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero {
+        min-height: 65vh;
+        padding: 45px 7%;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+
+    .section-heading h2 {
+        font-size: 25px;
+    }
+
+    .card {
+        min-width: 190px;
+        max-width: 190px;
+    }
+
+    .card img {
+        height: 250px;
+    }
+
+    .trailer-banner {
+        padding: 30px 20px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Navigation -->
+<header>
+
+    <div class="logo">SeriesHub.</div>
+
+    <nav>
+        <a href="homepage.html">Home</a>
+        <a href="#series">Series</a>
+        <a href="trailers.html">Trailers</a>
+        <a href="#contact">Contact Us</a>
+    </nav>
+
+</header>
+
+<!-- Welcome Section -->
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="tag">
+            WELCOME TO SERIESHUB
+        </div>
+
+        <h1>
+            Discover Your Next
+            <span>Favourite Series.</span>
+        </h1>
+
+        <p>
+            Explore the world of entertainment with SeriesHub.
+            Discover exciting web series, explore their stories,
+            learn about your favourite characters and watch
+            official trailers.
+        </p>
+
+        <a href="#series" class="hero-btn">
+            Explore Series →
+        </a>
+
+    </div>
+
+</section>
+
+<!-- Series Section -->
+<section class="series-section" id="series">
+
+    <div class="section-heading">
+
+        <h2>Popular <span>Web Series</span></h2>
+
+        <p>Scroll horizontally to explore all 8 series →</p>
+
+    </div>
+
+    <div class="series-container">
+
+        <!-- Wednesday -->
+        <div class="card">
+
+            <img src="wednesday.jpg"
+            alt="Wednesday">
+
+            <div class="card-content">
+                <h3>Wednesday</h3>
+
+                <a href="wednesday.html">
+                    Explore Series
+                </a>
+            </div>
+
+        </div>
+
+        <!-- Stranger Things -->
+        <div class="card">
+
+            <img src="strangerthings.jpg"
+            alt="Stranger Things">
+
+            <div class="card-content">
+                <h3>Stranger Things</h3>
+
+                <a href="strangerthings.html">
+                    Explore Series
+                </a>
+            </div>
+
+        </div>
+
+        <!-- Money Heist -->
+        <div class="card">
+
+            <img src="moneyheist.jpg"
+            alt="Money Heist">
+
+            <div class="card-content">
+                <h3>Money Heist</h3>
+
+                <a href="moneyheist.html">
+                    Explore Series
+                </a>
+            </div>
+
+        </div>
+
+        <!-- Dark -->
+        <div class="card">
+
+            <img src="dark.jpg"
+            alt="Dark">
+
+            <div class="card-content">
+                <h3>Dark</h3>
+
+                <a href="dark.html">
+                    Explore Series
+                </a>
+            </div>
+
+        </div>
+
+        <!-- The Witcher -->
+        <div class="card">
+
+            <img src="thewitcher.jpg"
+            alt="The Witcher">
+
+            <div class="card-content">
+                <h3>The Witcher</h3>
+
+                <a href="witcher.html">
+                    Explore Series
+                </a>
+            </div>
+
+        </div>
+
+        <!-- The Boys -->
+        <div class="card">
+
+            <img src="theboys.jpg"
+            alt="The Boys">
+
+            <div class="card-content">
+                <h3>The Boys</h3>
+
+                <a href="theboys.html">
+                    Explore Series
+                </a>
+            </div>
+
+        </div>
+
+        <!-- Squid Game -->
+        <div class="card">
+
+            <img src="squidgame.jpg"
+            alt="Squid Game">
+
+            <div class="card-content">
+                <h3>Squid Game</h3>
+
+                <a href="squidgame.html">
+                    Explore Series
+                </a>
+            </div>
+
+        </div>
+
+        <!-- The Umbrella Academy -->
+        <div class="card">
+
+            <img src="umbrellaacademy.jpg"
+            alt="The Umbrella Academy">
+
+            <div class="card-content">
+                <h3>The Umbrella Academy</h3>
+
+                <a href="umbrella.html">
+                    Explore Series
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Trailer Banner -->
+<section class="trailer-banner">
+
+    <h2> Watch Your Favourite Trailers</h2>
+
+    <p>
+        Want a preview before exploring a series?
+        Visit our dedicated trailer page and discover
+        trailers of all eight web series.
+    </p>
+
+    <a href="trailers.html">
+        Explore All Trailers →
+    </a>
+
+</section>
+
+<!-- Contact Section -->
+<section class="contact" id="contact">
+
+    <h2>Contact Us</h2>
+
+    <p>
+        Welcome to SeriesHub – your destination
+        for discovering and exploring web series.
+    </p>
+
+    <p>
+        Discover. Explore. Enjoy.
+    </p>
+
+</section>
+
+<!-- Footer -->
+<footer>
+
+    <p>© 2026 SeriesHub. All Rights Reserved.</p>
+
+    <p>Discover. Explore. Enjoy.</p>
+
+</footer>
+
+</body>
+</html>
+
