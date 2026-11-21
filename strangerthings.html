@@ -1,0 +1,374 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Stranger Things | SeriesHub</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #0b090d;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+/* Navigation */
+header {
+    padding: 22px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #120d11;
+}
+
+.logo {
+    font-size: 27px;
+    font-weight: bold;
+    color: #e50924;
+}
+
+header a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    padding: 60px 7%;
+
+    background:
+    linear-gradient(to right,
+    rgba(10,5,8,0.98) 15%,
+    rgba(10,5,8,0.75) 55%,
+    rgba(10,5,8,0.2)),
+    url("strangerthings.jpg");
+
+    background-size: 500px;
+    background-position: center;
+}
+
+/* Content */
+.content {
+    max-width: 650px;
+}
+
+.tag {
+    color: #ff354d;
+    letter-spacing: 3px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 58px;
+    margin: 18px 0;
+    color: #f5f1f1;
+}
+
+.details {
+    color: #c5c5c5;
+    margin-bottom: 18px;
+    font-size: 15px;
+}
+
+.rating {
+    margin-bottom: 22px;
+    font-size: 19px;
+}
+
+.stars {
+    color: #ffc107;
+    letter-spacing: 3px;
+}
+
+.rating-value {
+    color: white;
+    margin-left: 8px;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 23px;
+    margin-bottom: 13px;
+    color: #ff354d;
+}
+
+.overview {
+    color: #d0cfd5;
+    line-height: 1.8;
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+/* Buttons */
+.buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+button {
+    padding: 14px 28px;
+    border: none;
+    border-radius: 7px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.watch-btn {
+    background: #e50924;
+    color: white;
+}
+
+.watch-btn:hover {
+    background: #ff354d;
+    transform: scale(1.05);
+}
+
+.back-btn {
+    background: #33313d;
+    color: white;
+}
+
+.back-btn:hover {
+    background: #514b60;
+}
+
+/* Series Information */
+.extra {
+    padding: 40px 7%;
+    background: #151116;
+}
+
+.extra p {
+    color: #bbb;
+    line-height: 2;
+}
+
+/* Subscription Popup */
+.popup {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 20px;
+}
+
+.popup-box {
+    background: #21151b;
+    padding: 35px;
+    border-radius: 15px;
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+    border: 1px solid #e50924;
+}
+
+.popup-box h2 {
+    margin-bottom: 15px;
+}
+
+.popup-box p {
+    color: #ccc;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.close-btn {
+    background: #444;
+    color: white;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 22px;
+    color: #888;
+    background: #120d11;
+}
+
+/* Mobile Responsive */
+@media(max-width: 600px) {
+    h1 {
+        font-size: 40px;
+    }
+
+    .hero {
+        min-height: 90vh;
+        padding: 100px 6%;
+        background-position: center;
+    }
+
+    .overview {
+        font-size: 14px;
+    }
+
+    .rating {
+        font-size: 16px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Navigation -->
+<header>
+    <div class="logo">SeriesHub.</div>
+    <a href="homepage.html">← Back to Home</a>
+</header>
+
+<!-- Hero Section -->
+<section class="hero">
+
+    <div class="content">
+
+        <div class="tag">
+            SERIESHUB ORIGINAL COLLECTION
+        </div>
+
+        <h1>Stranger Things</h1>
+
+        <div class="details">
+            2016 – 2025 | 5 Seasons | Sci-Fi | Horror | Drama
+        </div>
+
+        <!-- IMDb Rating -->
+        <div class="rating">
+            <span class="stars">★★★★★</span>
+            <span class="rating-value">8.6/10</span>
+            <span style="color:#999;font-size:13px;"> IMDb</span>
+        </div>
+
+        <!-- Overview -->
+        <h2>Overview</h2>
+
+        <p class="overview">
+            Stranger Things is a science fiction mystery
+            series set in the fictional town of Hawkins,
+            Indiana.
+
+            When a young boy mysteriously disappears,
+            his friends and family begin searching for him.
+            Their journey leads them to a mysterious girl
+            named Eleven, who possesses extraordinary
+            supernatural abilities.
+
+            As they uncover secret experiments and a
+            terrifying alternate dimension known as
+            the Upside Down, the group faces dangerous
+            creatures and unexpected mysteries.
+
+            Filled with friendship, adventure, suspense
+            and supernatural events, Stranger Things
+            takes viewers on an unforgettable journey.
+        </p>
+
+        <!-- Buttons -->
+        <div class="buttons">
+
+            <button class="watch-btn" onclick="showPopup()">
+                ▶ Watch Now
+            </button>
+
+            <button class="back-btn"
+            onclick="window.location.href='homepage.html'">
+                Back
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Series Information -->
+<section class="extra">
+
+    <h2>Series Information</h2>
+
+    <p><b>Title:</b> Stranger Things</p>
+    <p><b>Genre:</b> Science Fiction, Horror, Drama</p>
+    <p><b>Creators:</b> The Duffer Brothers</p>
+    <p><b>Directors:</b> The Duffer Brothers and others</p>
+    <p><b>Language:</b> English</p>
+    <p><b>Seasons:</b> 5</p>
+    <p><b>Episodes:</b> 42</p>
+    <p><b>Platform:</b> Netflix</p>
+
+</section>
+
+<!-- Subscription Popup -->
+<div class="popup" id="subscribePopup">
+
+    <div class="popup-box">
+
+        <h2>Subscribe to Watch!</h2>
+
+        <p>
+            To watch Stranger Things, subscribe to
+            the official streaming platform, Netflix.
+        </p>
+
+        <button class="watch-btn"
+        onclick="openNetflix()">
+            Continue to Netflix
+        </button>
+
+        <br><br>
+
+        <button class="close-btn"
+        onclick="closePopup()">
+            Close
+        </button>
+
+    </div>
+
+</div>
+
+<!-- Footer -->
+<footer>
+    © 2026 SeriesHub. All Rights Reserved.
+</footer>
+
+<!-- JavaScript -->
+<script>
+
+function showPopup() {
+    document.getElementById("subscribePopup")
+    .style.display = "flex";
+}
+
+function closePopup() {
+    document.getElementById("subscribePopup")
+    .style.display = "none";
+}
+
+function openNetflix() {
+    window.open(
+        "https://www.netflix.com/title/80057281",
+        "_blank"
+    );
+}
+
+</script>
+
+</body>
+</html>
+
